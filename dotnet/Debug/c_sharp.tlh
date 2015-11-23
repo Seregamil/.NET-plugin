@@ -1,0 +1,98 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.50727.1 (36748542).
+//
+// c:\users\seregamil\desktop\sha512\dotnet\debug\c_sharp.tlh
+//
+// C++ source equivalent of Win32 type library C:\Users\Seregamil\Desktop\SHA512\c_sharp\bin\Debug\c_sharp.tlb
+// compiler-generated file created 11/23/15 at 11:46:03 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace c_sharp {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("3282f24e-f065-4738-b11e-1e713c044a30"))
+/* LIBID */ __c_sharp;
+struct /* coclass */ Class1;
+struct __declspec(uuid("12f9fbd7-4c88-35c6-bfbc-903cfd62c8cb"))
+/* dual interface */ fileManager;
+struct /* coclass */ ManagedClass;
+struct __declspec(uuid("fb36f448-c5b4-336b-8418-5f566ea8fa31"))
+/* dual interface */ _Class1;
+struct __declspec(uuid("37fc7870-11eb-33a5-8cc9-16489ba550ee"))
+/* dual interface */ _ManagedClass;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(fileManager, __uuidof(fileManager));
+_COM_SMARTPTR_TYPEDEF(_Class1, __uuidof(_Class1));
+_COM_SMARTPTR_TYPEDEF(_ManagedClass, __uuidof(_ManagedClass));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("e37490fc-a80f-35fd-8550-bfde40301b4b"))
+Class1;
+    // [ default ] interface _Class1
+    // interface _Object
+
+struct __declspec(uuid("12f9fbd7-4c88-35c6-bfbc-903cfd62c8cb"))
+fileManager : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall fileCreate (
+        /*[in]*/ BSTR path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall existFile (
+        /*[in]*/ BSTR path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall removeFile (
+        /*[in]*/ BSTR path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall renameFile (
+        /*[in]*/ BSTR old_path,
+        /*[in]*/ BSTR new_path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall directoryCreate (
+        /*[in]*/ BSTR path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall existDirectory (
+        /*[in]*/ BSTR path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall removeDirectory (
+        /*[in]*/ BSTR path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall renameDirectory (
+        /*[in]*/ BSTR old_path,
+        /*[in]*/ BSTR new_path,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+};
+
+struct __declspec(uuid("f885faa2-443e-3a4e-b290-37b649a68b4c"))
+ManagedClass;
+    // [ default ] interface _ManagedClass
+    // interface _Object
+    // interface fileManager
+
+struct __declspec(uuid("fb36f448-c5b4-336b-8418-5f566ea8fa31"))
+_Class1 : IDispatch
+{};
+
+struct __declspec(uuid("37fc7870-11eb-33a5-8cc9-16489ba550ee"))
+_ManagedClass : IDispatch
+{};
+
+} // namespace c_sharp
+
+#pragma pack(pop)
