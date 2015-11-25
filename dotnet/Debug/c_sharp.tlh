@@ -3,7 +3,7 @@
 // c:\users\seregamil\desktop\sha512\dotnet\debug\c_sharp.tlh
 //
 // C++ source equivalent of Win32 type library C:\Users\Seregamil\Desktop\SHA512\c_sharp\bin\Debug\c_sharp.tlb
-// compiler-generated file created 11/23/15 at 11:46:03 - DO NOT EDIT!
+// compiler-generated file created 11/25/15 at 16:40:12 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)
@@ -19,21 +19,21 @@ namespace c_sharp {
 struct __declspec(uuid("3282f24e-f065-4738-b11e-1e713c044a30"))
 /* LIBID */ __c_sharp;
 struct /* coclass */ Class1;
-struct __declspec(uuid("12f9fbd7-4c88-35c6-bfbc-903cfd62c8cb"))
-/* dual interface */ fileManager;
-struct /* coclass */ ManagedClass;
+struct __declspec(uuid("abb5d033-4670-3bce-aeae-3b76fde230e9"))
+/* dual interface */ plugin;
+struct /* coclass */ pluginClass;
 struct __declspec(uuid("fb36f448-c5b4-336b-8418-5f566ea8fa31"))
 /* dual interface */ _Class1;
-struct __declspec(uuid("37fc7870-11eb-33a5-8cc9-16489ba550ee"))
-/* dual interface */ _ManagedClass;
+struct __declspec(uuid("e1e1dce7-f50f-36c6-8dac-bc1e335ee1e5"))
+/* dual interface */ _pluginClass;
 
 //
 // Smart pointer typedef declarations
 //
 
-_COM_SMARTPTR_TYPEDEF(fileManager, __uuidof(fileManager));
+_COM_SMARTPTR_TYPEDEF(plugin, __uuidof(plugin));
 _COM_SMARTPTR_TYPEDEF(_Class1, __uuidof(_Class1));
-_COM_SMARTPTR_TYPEDEF(_ManagedClass, __uuidof(_ManagedClass));
+_COM_SMARTPTR_TYPEDEF(_pluginClass, __uuidof(_pluginClass));
 
 //
 // Type library items
@@ -44,53 +44,28 @@ Class1;
     // [ default ] interface _Class1
     // interface _Object
 
-struct __declspec(uuid("12f9fbd7-4c88-35c6-bfbc-903cfd62c8cb"))
-fileManager : IDispatch
+struct __declspec(uuid("abb5d033-4670-3bce-aeae-3b76fde230e9"))
+plugin : IDispatch
 {
     //
     // Raw methods provided by interface
     //
 
-      virtual HRESULT __stdcall fileCreate (
-        /*[in]*/ BSTR path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
-      virtual HRESULT __stdcall existFile (
-        /*[in]*/ BSTR path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
-      virtual HRESULT __stdcall removeFile (
-        /*[in]*/ BSTR path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
-      virtual HRESULT __stdcall renameFile (
-        /*[in]*/ BSTR old_path,
-        /*[in]*/ BSTR new_path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
-      virtual HRESULT __stdcall directoryCreate (
-        /*[in]*/ BSTR path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
-      virtual HRESULT __stdcall existDirectory (
-        /*[in]*/ BSTR path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
-      virtual HRESULT __stdcall removeDirectory (
-        /*[in]*/ BSTR path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
-      virtual HRESULT __stdcall renameDirectory (
-        /*[in]*/ BSTR old_path,
-        /*[in]*/ BSTR new_path,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+      virtual HRESULT __stdcall Initializate ( ) = 0;
 };
 
-struct __declspec(uuid("f885faa2-443e-3a4e-b290-37b649a68b4c"))
-ManagedClass;
-    // [ default ] interface _ManagedClass
+struct __declspec(uuid("066c9234-b734-3c23-8339-3fe7ce9bb860"))
+pluginClass;
+    // [ default ] interface _pluginClass
     // interface _Object
-    // interface fileManager
+    // interface plugin
 
 struct __declspec(uuid("fb36f448-c5b4-336b-8418-5f566ea8fa31"))
 _Class1 : IDispatch
 {};
 
-struct __declspec(uuid("37fc7870-11eb-33a5-8cc9-16489ba550ee"))
-_ManagedClass : IDispatch
+struct __declspec(uuid("e1e1dce7-f50f-36c6-8dac-bc1e335ee1e5"))
+_pluginClass : IDispatch
 {};
 
 } // namespace c_sharp

@@ -1,5 +1,5 @@
 
-cell AMX_NATIVE_CALL __directory_create(AMX* amx, cell* params){
+/*cell AMX_NATIVE_CALL __directory_create(AMX* amx, cell* params){
 	fileManagerPtr pICalc(__uuidof(ManagedClass));
 	
 	int len = 0;
@@ -65,4 +65,4 @@ cell AMX_NATIVE_CALL __directory_rename(AMX* amx, cell* params){
 
 	pICalc->renameDirectory( bstr_t(text), bstr_t(text1), &lResult );
 	return lResult;
-}
+}*/
