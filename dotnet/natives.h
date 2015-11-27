@@ -12,3 +12,4 @@ AMX_NATIVE_INFO PluginNatives[] =
 	{"mama_tvoya", mama_tvoya},*/
     {0, 0}
 };
+

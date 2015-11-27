@@ -91,6 +91,7 @@
     <None Include="dotnet.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="c_sharp.h" />
     <ClInclude Include="dirFunctions.h" />
     <ClInclude Include="fileFunctions.h" />
     <ClInclude Include="natives.h" />

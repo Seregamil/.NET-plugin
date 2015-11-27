@@ -12,8 +12,8 @@ namespace c_sharp
         [DllImport("S:\\gta-o\\plugins\\dotnet.dll")]
         static extern void logwrite(string message);
 
-        [DllImport("S:\\gta-o\\plugins\\dotnet.dll")]
-        static extern bool callCallback(string functionName, params object[] args);
+        [DllImport("S:\\gta-o\\plugins\\dotnet.dll", CallingConvention = CallingConvention.StdCall)]
+        static extern void callPublic(string functionName, String[] args, int length);
 
         public interface plugin
         {
@@ -24,122 +24,53 @@ namespace c_sharp
         {
             public void Initializate()
             {
-                logwrite("\n\nСашка лалка\n\n");
+                callFunction("onDotnetLoaded", 10, 15, 76.53, true, 3.53, "kekyshka"); // playerid, cost, message
+                callFunction("dotnet_test", 42, 75, 5454);
+                callFunction("OnPlayerConnect", 15);
+            }
+
+            public void callFunction(string callback, params object[] args )
+            {
+                List<string> array = new List<string>();
+                for (int j = 0; j != args.Length; j++)
+                {
+                    switch (Type.GetTypeCode(args[j].GetType()))
+                    {
+                        case TypeCode.Int32:
+                            {
+                                array.Add("i" + args[j].ToString());
+                                break;
+                            }
+                        case TypeCode.String:
+                            {
+                                array.Add("s" + args[j]);
+                                break;
+                            }
+                        case TypeCode.Boolean:
+                            {
+                                array.Add("b" + args[j].ToString());
+                                break;
+                            }
+                        case TypeCode.Char:
+                            {
+                                array.Add("c" + args[j].ToString());
+                                break;
+                            }
+                        case TypeCode.Double:
+                            {
+                                string temp = args[j].ToString();
+                                array.Add("f" + temp.Replace(',', '.'));
+                                break;
+                            }
+                        default:
+                            {
+                                array.Add("u" + args[j].ToString());
+                                break;
+                            }
+                    }
+                }
+                callPublic(callback, array.ToArray(), array.Count);   
             }
         }
     }
 }
-
-/*[DllImport("S:\\gta-o\\plugins\\dotnet.dll")]
-public static extern StringBuilder EI_GetName();*/
-/*public interface fileManager
-{
-    bool fileCreate( string path ) ;
-    bool existFile( string path ) ;
-    bool removeFile( string path );
-    bool renameFile( string old_path , string new_path );
-
-    bool directoryCreate( string path );
-    bool existDirectory( string path );
-    bool removeDirectory( string path );
-    bool renameDirectory( string old_path, string new_path );
-};
-*/
-/*public class ManagedClass : fileManager
-{
-    public bool fileCreate(string path)
-    {
-        if (File.Exists(path)) return false;
-        try
-        {
-            File.Create(path + EI_GetName());
-        }
-        catch
-        {
-            return false;
-        }
-        return true ;
-    }
-
-    public bool existFile(string path)
-    {
-        return File.Exists(path);
-    }
-
-    public bool removeFile(string path)
-    {
-        if (!File.Exists(path)) return false;
-        try
-        {
-            File.Delete(path);
-        }
-        catch
-        {
-            return false;
-        }
-        return true;
-    }
-
-    public bool renameFile(string old_path, string new_path)
-    {
-        if (!File.Exists(old_path)) return false;
-        if (File.Exists(new_path)) return false;
-        try
-        {
-            File.Move(old_path, new_path);            
-        }
-        catch
-        {
-            return false;
-        }
-        return true;
-    }
-
-    public bool directoryCreate(string path)
-    {
-        if (Directory.Exists(path)) return false;
-        try
-        {
-            Directory.CreateDirectory(path);
-        }
-        catch
-        {
-            return false;
-        }
-        return true;
-    }
-
-    public bool existDirectory(string path)
-    {
-        return Directory.Exists(path);
-    }
-
-    public bool removeDirectory(string path)
-    {
-        if (!Directory.Exists(path)) return false;
-        try
-        {
-            Directory.Delete(path);
-        }
-        catch
-        {
-            return false;
-        }
-        return true;
-    }
-
-    public bool renameDirectory(string old_path, string new_path)
-    {
-        if (!Directory.Exists(old_path)) return false;
-        if (Directory.Exists(new_path)) return false;
-        try
-        {
-            Directory.Move(old_path, new_path);
-        }
-        catch
-        {
-            return false;
-        }
-        return true;
-    }
-}*/
