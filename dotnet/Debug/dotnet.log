@@ -1,4 +1,4 @@
-﻿Сборка начата 27.11.2015 19:01:50.
+﻿Сборка начата 07.12.2015 23:58:01.
      1>Проект "C:\Users\Seregamil\Desktop\SHA512\dotnet\dotnet.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D SHA512_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt dotnet.cpp
@@ -11,4 +11,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:04.81
+Затраченное время: 00:00:05.67

@@ -64,6 +64,11 @@
       <AddModuleNamesToAssembly>
       </AddModuleNamesToAssembly>
       <ModuleDefinitionFile>dotnet.def</ModuleDefinitionFile>
+      <EmbedManagedResourceFile>
+      </EmbedManagedResourceFile>
+      <AssemblyLinkResource>
+      </AssemblyLinkResource>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -89,12 +94,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="dotnet.def" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="c_sharp.h" />
-    <ClInclude Include="dirFunctions.h" />
-    <ClInclude Include="fileFunctions.h" />
-    <ClInclude Include="natives.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

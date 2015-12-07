@@ -6,30 +6,16 @@
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="SDK">
-      <UniqueIdentifier>{5c0835c3-10f6-4c05-b841-87b2751055a4}</UniqueIdentifier>
+      <UniqueIdentifier>{0fd9ce27-453b-4e86-a10b-41736204aa87}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\SDK\amxplugin.cpp">
-      <Filter>SDK</Filter>
-    </ClCompile>
     <ClCompile Include="dotnet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="natives.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="fileFunctions.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="dirFunctions.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="c_sharp.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
+    <ClCompile Include="..\SDK\amxplugin.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="dotnet.def">
