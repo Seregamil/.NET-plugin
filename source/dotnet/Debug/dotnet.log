@@ -1,0 +1,14 @@
+﻿Сборка начата 08.12.2015 15:52:21.
+     1>Проект "C:\Users\Seregamil\Desktop\SHA512\dotnet\dotnet.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USRDLL /D SHA512_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt dotnet.cpp
+         dotnet.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"S:\gta-o\plugins\dotnet.dll" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /DEF:"dotnet.def" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"S:\gta-o\plugins\dotnet.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"S:\gta-o\plugins\dotnet.lib" /MACHINE:X86 /KEYFILE:"C:\Users\Seregamil\Desktop\SHA512\key.snk" /DLL Debug\amxplugin.obj
+         Debug\dotnet.obj
+         dotnet.vcxproj -> S:\gta-o\plugins\dotnet.dll
+     1>Построение проекта "C:\Users\Seregamil\Desktop\SHA512\dotnet\dotnet.vcxproj" завершено (целевые объекты Build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:05.52

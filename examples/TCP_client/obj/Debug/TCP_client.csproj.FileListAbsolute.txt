@@ -1,0 +1,6 @@
+C:\Users\Seregamil\Desktop\SHA512\TCP_client\bin\Debug\TCP_client.exe.config
+C:\Users\Seregamil\Desktop\SHA512\TCP_client\bin\Debug\TCP_client.exe
+C:\Users\Seregamil\Desktop\SHA512\TCP_client\bin\Debug\TCP_client.pdb
+C:\Users\Seregamil\Desktop\SHA512\TCP_client\obj\Debug\TCP_client.csprojResolveAssemblyReference.cache
+C:\Users\Seregamil\Desktop\SHA512\TCP_client\obj\Debug\TCP_client.exe
+C:\Users\Seregamil\Desktop\SHA512\TCP_client\obj\Debug\TCP_client.pdb
