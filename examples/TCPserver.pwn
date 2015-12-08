@@ -29,13 +29,11 @@ public onSocketRemoteConnect(remote_clientid) {
 }
 
 public onSocketRemoteDisconnect(remote_clientid) {
-    printf( "onSocketRemoteDisconnect(%i)", remote_clientid );
-    callDotnetMethod(sendData, "is", remote_clientid, "Hello! SA-MP Se42322rver. by Seregamil" );
+    	printf( "onSocketRemoteDisconnect(%i)", remote_clientid );
 	return true ;
 }
 
 public onSocketReceiveData(remote_clientid, data[]) {
-    printf( "onSocketReceiveData(%i, %s)", remote_clientid, data );
-    callDotnetMethod(sendData, "is", remote_clientid, data );
+    	printf( "onSocketReceiveData(%i, %s)", remote_clientid, data );
 	return true ;
 }
