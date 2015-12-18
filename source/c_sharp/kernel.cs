@@ -28,6 +28,8 @@ namespace c_sharp
             {
                 cpp.logwrite(arg.ToString());
             }
+
+            cpp.callRemoteCallback("onDotnetWasLoaded", "Hello! =)");
             return true;
         }
 

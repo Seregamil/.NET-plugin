@@ -4,5 +4,5 @@ EXPORTS
    Unload
    AmxLoad
    AmxUnload
-   ProcessTick
    __callDotnetMethod
+   __callDotnetMethod_STR

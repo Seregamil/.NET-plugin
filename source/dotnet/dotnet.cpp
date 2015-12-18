@@ -5,6 +5,7 @@
 #include <string>
 
 #import "C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\bin\Debug\c_sharp.tlb" raw_interfaces_only
+
 using namespace c_sharp;
 using namespace std;
 
@@ -17,7 +18,7 @@ AMX *amxMachine;
 
 PLUGIN_EXPORT unsigned int PLUGIN_CALL Supports() 
 {
-	return SUPPORTS_VERSION | SUPPORTS_AMX_NATIVES | SUPPORTS_PROCESS_TICK;
+	return SUPPORTS_VERSION | SUPPORTS_AMX_NATIVES ;//| SUPPORTS_PROCESS_TICK;
 }
 
 PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData) 
@@ -34,7 +35,7 @@ PLUGIN_EXPORT bool PLUGIN_CALL Load(void **ppData)
 PLUGIN_EXPORT void PLUGIN_CALL Unload()
 {
 	CoUninitialize();
-    logprintf("DotNet plugin was unloaded");
+    logprintf(".NET plugin was unloaded");
 }
 
 extern "C" __declspec(dllexport) void __stdcall __callRemoteCallback(const char* callback, const char** strArray, int length) {
@@ -55,7 +56,7 @@ extern "C" __declspec(dllexport) void __stdcall __callRemoteCallback(const char*
 				case 'b': amx_Push(amxMachine, arg.compare("false") ? 0 : 1); break; // push boolean
 				case 'c': amx_Push(amxMachine, key); break; // push
 				case 'f': {
-					float f = std::stof(arg.c_str());
+					float f = stof(arg.c_str());
 					amx_Push(amxMachine, amx_ftoc(f)); // push float*
 					break;
 				}
@@ -95,7 +96,7 @@ cell AMX_NATIVE_CALL __callDotnetMethod(AMX* amx, cell* params){
 							break;
 						  }
 				case 'c': {
-							char* c = new char[ 1 ] ;
+							char* c = new char[ 1 ] ; // :D
 							cell *addr	= NULL;
 
 							amx_GetAddr(amx, params[j + 3], &addr); 
@@ -197,7 +198,7 @@ cell AMX_NATIVE_CALL __callDotnetMethod_STR(AMX* amx, cell* params){
 	_bstr_t temp = lResult.bstrVal;
 	amx_SetString(addr, temp, 0, 0, params[3]);
 
-	return lResult.lVal;
+	return 1;
 }
 
 AMX_NATIVE_INFO PluginNatives[] =
@@ -212,7 +213,8 @@ PLUGIN_EXPORT int PLUGIN_CALL AmxLoad( AMX *amx )
 	amxMachine = amx ;
 
 	int reg = amx_Register(amx, PluginNatives, -1);
-	logprintf("dotnet: library was loaded.");
+	logprintf("\n\t.NET plugin was loaded. v1.0");
+	logprintf("\t\tby Seregamil.\n");
     return reg;
 }
 
@@ -224,9 +226,4 @@ PLUGIN_EXPORT int PLUGIN_CALL AmxUnload( AMX *amx )
 extern "C" __declspec(dllexport) void __stdcall logwrite( char message[] )
 {
 	logprintf(message);
-}
-
-PLUGIN_EXPORT void PLUGIN_CALL ProcessTick()
-{
-
 }
