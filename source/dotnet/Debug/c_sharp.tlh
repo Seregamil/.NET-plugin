@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.50727.1 (36748542).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.61219.0 (35e03815).
 //
-// c:\users\seregamil\desktop\sha512\dotnet\debug\c_sharp.tlh
+// c:\users\seregamil\documents\github\.net-plugin\source\dotnet\debug\c_sharp.tlh
 //
-// C++ source equivalent of Win32 type library C:\Users\Seregamil\Desktop\SHA512\c_sharp\bin\Debug\c_sharp.tlb
-// compiler-generated file created 12/08/15 at 15:52:25 - DO NOT EDIT!
+// C++ source equivalent of Win32 type library C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\bin\Debug\c_sharp.tlb
+// compiler-generated file created 12/18/15 at 14:59:02 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)
@@ -21,7 +21,7 @@ struct __declspec(uuid("3282f24e-f065-4738-b11e-1e713c044a30"))
 struct /* coclass */ kernel;
 struct /* coclass */ cpp;
 struct /* coclass */ dotnetMethod;
-struct __declspec(uuid("558383d0-6071-3acd-9654-c5ac11250967"))
+struct __declspec(uuid("8213259e-f4bf-3d00-a619-d058e6a8d082"))
 /* dual interface */ plugin;
 struct /* coclass */ pluginClass;
 struct __declspec(uuid("a6c01c21-de05-306c-a30e-c01789fa230b"))
@@ -65,7 +65,7 @@ dotnetMethod;
     // interface ICloneable
     // interface ISerializable
 
-struct __declspec(uuid("558383d0-6071-3acd-9654-c5ac11250967"))
+struct __declspec(uuid("8213259e-f4bf-3d00-a619-d058e6a8d082"))
 plugin : IDispatch
 {
     //
@@ -75,7 +75,7 @@ plugin : IDispatch
       virtual HRESULT __stdcall callDotnetMethod (
         /*[in]*/ long methodID,
         /*[in]*/ BSTR arguments,
-        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+        /*[out,retval]*/ VARIANT * pRetVal ) = 0;
 };
 
 struct __declspec(uuid("47e26b84-bae4-3fd8-9e31-4a8d35a4cdf7"))

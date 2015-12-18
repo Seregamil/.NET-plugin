@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-#import "C:\Users\Seregamil\Desktop\SHA512\c_sharp\bin\Debug\c_sharp.tlb" raw_interfaces_only
+#import "C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\bin\Debug\c_sharp.tlb" raw_interfaces_only
 using namespace c_sharp;
 using namespace std;
 
@@ -65,7 +65,7 @@ extern "C" __declspec(dllexport) void __stdcall __callRemoteCallback(const char*
 	}
 }
 
-cell* get_amxaddr(AMX *amx,cell amx_addr)
+cell* get_amxaddr(AMX *amx, cell amx_addr)
 {
 	return (cell *)(amx->base + (int)(((AMX_HEADER *)amx->base)->dat + amx_addr));
 }
@@ -115,18 +115,95 @@ cell AMX_NATIVE_CALL __callDotnetMethod(AMX* amx, cell* params){
 			data = data + "\n" ;
 	}
 
-	VARIANT_BOOL lResult ;
-	
+	VARIANT lResult ;
+
 	pluginPtr pICalc(__uuidof(pluginClass));
 	pICalc->callDotnetMethod(methodID, bstr_t(data.c_str()), &lResult);
+
+	cell result ;
+
+	switch(lResult.vt){
+		case VT_BOOL:{ // boolean
+						result = lResult.boolVal;
+						break;
+					 }
+		case VT_I4:{ // int32
+						result = lResult.lVal;
+						break;
+				   }
+		case VT_R4:{ // float
+						result = amx_ftoc(lResult.fltVal);
+						break;
+				   }
+	}
+
+	return result;
+}
+
+cell AMX_NATIVE_CALL __callDotnetMethod_STR(AMX* amx, cell* params){
+	long methodID = params[ 1 ] ;
 	
-	return 1;
+	char* format;
+	amx_StrParam(amx, params[ 4 ], format);
+
+	int length = strlen(format);
+
+	string data;
+
+	for( int j = 0 ; j != length ; j ++ ) {
+		char key = format[ j ] ;
+		switch(key){
+				case 'i': { 
+							int i = *get_amxaddr(amx, params[j + 5]);
+							data = data + "i" + to_string(i);
+							break;
+						  }
+				case 's': {
+							char* s ;
+							amx_StrParam(amx, params[j + 5], s);
+							data = data + "s" + s;
+							break;
+						  }
+				case 'c': {
+							char* c = new char[ 1 ] ;
+							cell *addr	= NULL;
+
+							amx_GetAddr(amx, params[j + 5], &addr); 
+							amx_GetString(c, addr, 0, 2);
+
+							data = data + "c" + c;
+							break;
+						  }
+				case 'f': { 
+							float f = amx_ctof(*get_amxaddr(amx, params[j + 5]));
+							data = data + "f" + to_string(f);
+							break;
+						  }	
+		}
+
+		if( j != length - 1 )
+			data = data + "\n" ;
+	}
+
+	VARIANT lResult ;
+
+	pluginPtr pICalc(__uuidof(pluginClass));
+	pICalc->callDotnetMethod(methodID, bstr_t(data.c_str()), &lResult);
+
+	cell* addr = NULL;
+
+	amx_GetAddr(amx, params[2], &addr);
+
+	_bstr_t temp = lResult.bstrVal;
+	amx_SetString(addr, temp, 0, 0, params[3]);
+
+	return lResult.lVal;
 }
 
 AMX_NATIVE_INFO PluginNatives[] =
 {
 	{"callDotnetMethod", __callDotnetMethod},
-	//{"HelloWorld", HelloWorld},
+	{"callDotnetMethodStr", __callDotnetMethod_STR},
     {0, 0}
 };
 
@@ -138,7 +215,6 @@ PLUGIN_EXPORT int PLUGIN_CALL AmxLoad( AMX *amx )
 	logprintf("dotnet: library was loaded.");
     return reg;
 }
-
 
 PLUGIN_EXPORT int PLUGIN_CALL AmxUnload( AMX *amx ) 
 {

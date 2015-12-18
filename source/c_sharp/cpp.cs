@@ -10,15 +10,15 @@ namespace c_sharp
 {
     public class cpp
     {
-        public delegate bool dotnetMethod(params object[] args);
+        public delegate object dotnetMethod(params object[] args);
         public interface plugin
         {
-            bool callDotnetMethod(int methodID, string arguments);
+            object callDotnetMethod(int methodID, string arguments);
         };
 
         public class pluginClass : plugin
         { 
-            public bool callDotnetMethod(int methodID, string arguments)
+            public object callDotnetMethod(int methodID, string arguments)
             {
                 return kernel.METHOD_ID[methodID](help.getArgsFromString(arguments, '\n'));
             }

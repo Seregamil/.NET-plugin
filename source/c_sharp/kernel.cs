@@ -14,23 +14,54 @@ namespace c_sharp
     public class kernel
     {
         public static cpp.dotnetMethod[] METHOD_ID = {
-                                        onDotnetLoaded,
-                                        onPlayerConnect,
-                                        onPlayerDisconnect
+                                        	onDotnetLoaded,
+	                                        testINT,
+	                                        testBOOL,
+	                                        testSTRING,
+	                                        testFLOAT
                                      };
-        public static bool onDotnetLoaded(object[] args)
+
+        public static object onDotnetLoaded(params object[] args)
         {
+            cpp.logwrite("dotnet-> onDotnetLoaded was called. ARGS:");
+            foreach (object arg in args)
+            {
+                cpp.logwrite(arg.ToString());
+            }
             return true;
         }
 
-        public static bool onPlayerConnect(object[] args)
+        public static object testINT(params object[] args)
         {
-            return true;
+            cpp.logwrite("dotnet-> testINT was called");
+            int a = Convert.ToInt32(args[0]);
+            int b = Convert.ToInt32(args[1]);
+            return a + b ;
         }
 
-        public static bool onPlayerDisconnect(object[] args)
+        public static object testBOOL(params object[] args)
         {
-            return true;
+            cpp.logwrite("dotnet-> testBOOL was called.");
+            return false;
+        }
+
+        public static object testSTRING(params object[] args)
+        {
+            cpp.logwrite("dotnet-> testSTRING was called." );
+
+            foreach (object arg in args)
+            {
+                cpp.logwrite(string.Format("{0}: {1}",arg.GetType(), arg.ToString()));
+            }
+
+            return "blackJack prod.";
+        }
+
+        public static object testFLOAT(params object[] args)
+        {
+            cpp.logwrite("dotnet-> testFLOAT was called. ARGS:");
+            float result = 13.228f;
+            return result;
         }
     }
 }
