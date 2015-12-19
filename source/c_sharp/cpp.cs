@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
-using System.IO;
 using System.Reflection;
 
 namespace c_sharp
@@ -33,7 +30,7 @@ namespace c_sharp
         public static extern void logwrite(string message);
 
         [DllImport("S:\\gta-o\\plugins\\dotnet.dll", CallingConvention = CallingConvention.StdCall)]
-        static extern void __callRemoteCallback(string functionName, String[] args, int length);
+        static extern void __callRemoteCallback(string functionName, string[] args, int length);
 
         public static void callRemoteCallback(string callback, params object[] args)
         {

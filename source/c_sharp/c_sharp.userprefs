@@ -1,0 +1,27 @@
+﻿<Properties>
+  <AuthorInfo Name="Seregamil" Email="seregamil38@gmail.com" Copyright="Seregamil" Company="" Trademark="" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" ActiveRuntime="Mono 4.2.1 (Visual)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="cpp.cs">
+    <Files>
+      <File FileName="cpp.cs" Line="2" Column="34" />
+      <File FileName="kernel.cs" Line="1" Column="14" />
+      <File FileName="macro.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="c_sharp" expanded="True">
+            <Node name="c_sharp" expanded="True">
+              <Node name="Properties" expanded="True" />
+              <Node name="cpp.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

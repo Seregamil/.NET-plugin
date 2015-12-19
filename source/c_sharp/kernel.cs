@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Runtime.InteropServices;
-using System.Threading;
-using System.Net;
-using System.Net.Sockets;
-using System.IO;
+﻿//using Mono;
 
 namespace c_sharp
 {
@@ -28,8 +19,9 @@ namespace c_sharp
         public static object testINT(params object[] args)
         {
             cpp.logwrite("dotnet-> testINT was called");
-            int a = Convert.ToInt32(args[0]);
-            int b = Convert.ToInt32(args[1]);
+
+			int a = (int)args[0];
+			int b = (int)args[1];
             return a + b ;
         }
 
