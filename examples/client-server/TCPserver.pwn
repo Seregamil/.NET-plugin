@@ -6,20 +6,15 @@
 
 #include <a_samp>
 
-native callDotnetMethod(methodID, split[], {Float,_}:...);
+native callDotnetMethod(methodName[], split[], {Float,_}:...);
 
 forward onSocketReceiveData(remote_clientid, data[]); // called when a remote client sends data
 forward onSocketRemoteConnect(remote_clientid); // called when a remote client connects to our socket server
 forward onSocketRemoteDisconnect(remote_clientid); // called when a remote client disconnects from our socket server
 
-enum c_sharp {
-	createSocketServer,
-	sendData
-};
-
 main()
 {
-    callDotnetMethod(createSocketServer, "ii", MAX_PLAYERS, 11000);
+    callDotnetMethod("createSocketServer", "ii", MAX_PLAYERS, 11000);
 }
 
 public onSocketRemoteConnect(remote_clientid) {
@@ -29,11 +24,11 @@ public onSocketRemoteConnect(remote_clientid) {
 }
 
 public onSocketRemoteDisconnect(remote_clientid) {
-    	printf( "onSocketRemoteDisconnect(%i)", remote_clientid );
+    printf( "onSocketRemoteDisconnect(%i)", remote_clientid );
 	return true ;
 }
 
 public onSocketReceiveData(remote_clientid, data[]) {
-    	printf( "onSocketReceiveData(%i, %s)", remote_clientid, data );
+    printf( "onSocketReceiveData(%i, %s)", remote_clientid, data );
 	return true ;
 }

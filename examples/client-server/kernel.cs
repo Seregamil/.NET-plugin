@@ -13,16 +13,11 @@ namespace c_sharp
 {
     public class kernel
     {
-        public static cpp.dotnetMethod[] METHOD_ID = {
-                                        createSocketServer,
-                                        sendData
-                                     };
-
         public static TcpListener _server;
         public static TcpClient[] clients = new TcpClient[macro.MAX_PLAYERS];
         public static bool _isEnabled = false;
 
-        public static bool createSocketServer(params object[] args)
+        public static object createSocketServer(params object[] args)
         {
             for (int j = 0; j != macro.MAX_PLAYERS; j ++ ) clients[j] = null; // clear data
 
@@ -30,7 +25,7 @@ namespace c_sharp
             int port = Convert.ToInt32(args[1]);
 
             new Thread(Server).Start(port); //create new thread for server           
-            return true;
+            return (object)true;
         }
 
         public static void Server(object port) // initializate new server
@@ -89,7 +84,7 @@ namespace c_sharp
             }
         }
 
-        public static bool sendData(params object[] args)
+        public static object sendData(params object[] args)
         {
             TcpClient client = clients[Convert.ToInt32(args[0])]; //(TcpClient)args[0];
             string data = args[1].ToString();
@@ -99,7 +94,7 @@ namespace c_sharp
 
             StreamWriter sWriter = new StreamWriter(client.GetStream(), Encoding.GetEncoding("windows-1251"));
             sWriter.WriteLine(data);
-            return true;
+            return (object)true;
         }
     }
 }

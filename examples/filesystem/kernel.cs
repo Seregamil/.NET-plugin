@@ -13,18 +13,7 @@ namespace c_sharp
 {
     public class kernel
     {
-        public static cpp.dotnetMethod[] METHOD_ID = {
-	                                        createFile,
-	                                        deleteFile,
-	                                        renameFile,
-	                                        existFile,
-	
-	                                        createDir,
-	                                        deleteDir,
-	                                        renameDir,
-	                                        existDir
-                                     };
-        public static bool createFile(object[] args)
+        public static object createFile(object[] args)
         {
             try
             {
@@ -32,12 +21,12 @@ namespace c_sharp
             }
             catch
             {
-                return false;
+                return (object)false;
             }
-            return true;
+            return (object)true;
         }
 
-        public static bool deleteFile(object[] args)
+        public static object deleteFile(object[] args)
         {
             try
             {
@@ -45,12 +34,12 @@ namespace c_sharp
             }
             catch
             {
-                return false;
+                return (object)false;
             }
-            return true;
+            return (object)true;
         }
 
-        public static bool renameFile(object[] args)
+        public static object renameFile(object[] args)
         {
             try
             {
@@ -58,17 +47,17 @@ namespace c_sharp
             }
             catch
             {
-                return false;
+                return (object)false;
             }
-            return true;
+            return (object)true;
         }
 
-        public static bool existFile(object[] args)
+        public static object existFile(object[] args)
         {
-            return File.Exists(args[0].ToString());
+            return (object)File.Exists(args[0].ToString());
         }
 
-        public static bool createDir(object[] args)
+        public static object createDir(object[] args)
         {
             try
             {
@@ -76,12 +65,12 @@ namespace c_sharp
             }
             catch
             {
-                return false;
+                return (object)false;
             }
-            return true;
+            return (object)true;
         }
 
-        public static bool deleteDir(object[] args)
+        public static object deleteDir(object[] args)
         {
             try
             {
@@ -89,12 +78,12 @@ namespace c_sharp
             }
             catch
             {
-                return false;
+                return (object)false;
             }
-            return true;
+            return (object)true;
         }
 
-        public static bool renameDir(object[] args)
+        public static object renameDir(object[] args)
         {
             try
             {
@@ -102,14 +91,14 @@ namespace c_sharp
             }
             catch
             {
-                return false;
+                return (object)false;
             }
-            return true;
+            return (object)true;
         }
 
-        public static bool existDir(object[] args)
+        public static object existDir(object[] args)
         {
-            return Directory.Exists(args[0].ToString());
+            return (object)Directory.Exists(args[0].ToString());
         }
     }
 }
