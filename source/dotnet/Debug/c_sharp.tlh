@@ -3,7 +3,7 @@
 // c:\users\seregamil\documents\github\.net-plugin\source\dotnet\debug\c_sharp.tlh
 //
 // C++ source equivalent of Win32 type library C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\bin\Debug\c_sharp.tlb
-// compiler-generated file created 12/18/15 at 15:31:52 - DO NOT EDIT!
+// compiler-generated file created 12/19/15 at 10:54:07 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)
@@ -21,7 +21,7 @@ struct __declspec(uuid("3282f24e-f065-4738-b11e-1e713c044a30"))
 struct /* coclass */ kernel;
 struct /* coclass */ cpp;
 struct /* coclass */ dotnetMethod;
-struct __declspec(uuid("8213259e-f4bf-3d00-a619-d058e6a8d082"))
+struct __declspec(uuid("4ae22b78-b13b-3de3-a082-3cd520fde1f8"))
 /* dual interface */ plugin;
 struct /* coclass */ pluginClass;
 struct __declspec(uuid("a6c01c21-de05-306c-a30e-c01789fa230b"))
@@ -65,7 +65,7 @@ dotnetMethod;
     // interface ICloneable
     // interface ISerializable
 
-struct __declspec(uuid("8213259e-f4bf-3d00-a619-d058e6a8d082"))
+struct __declspec(uuid("4ae22b78-b13b-3de3-a082-3cd520fde1f8"))
 plugin : IDispatch
 {
     //
@@ -73,7 +73,7 @@ plugin : IDispatch
     //
 
       virtual HRESULT __stdcall callDotnetMethod (
-        /*[in]*/ long methodID,
+        /*[in]*/ BSTR methodName,
         /*[in]*/ BSTR arguments,
         /*[out,retval]*/ VARIANT * pRetVal ) = 0;
 };

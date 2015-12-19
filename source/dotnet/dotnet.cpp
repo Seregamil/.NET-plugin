@@ -72,8 +72,9 @@ cell* get_amxaddr(AMX *amx, cell amx_addr)
 }
 
 cell AMX_NATIVE_CALL __callDotnetMethod(AMX* amx, cell* params){
-	long methodID = params[ 1 ] ;
-	
+	char *methodName;
+	amx_StrParam(amx, params[ 1 ], methodName);
+
 	char* format;
 	amx_StrParam(amx, params[ 2 ], format);
 
@@ -119,9 +120,9 @@ cell AMX_NATIVE_CALL __callDotnetMethod(AMX* amx, cell* params){
 	VARIANT lResult ;
 
 	pluginPtr pICalc(__uuidof(pluginClass));
-	pICalc->callDotnetMethod(methodID, bstr_t(data.c_str()), &lResult);
+	pICalc->callDotnetMethod(bstr_t(methodName), bstr_t(data.c_str()), &lResult);
 
-	cell result ;
+	cell result = 0;
 
 	switch(lResult.vt){
 		case VT_BOOL:{ // boolean
@@ -142,8 +143,10 @@ cell AMX_NATIVE_CALL __callDotnetMethod(AMX* amx, cell* params){
 }
 
 cell AMX_NATIVE_CALL __callDotnetMethod_STR(AMX* amx, cell* params){
-	long methodID = params[ 1 ] ;
-	
+	//long methodID = params[ 1 ] ;
+	char *methodName;
+	amx_StrParam(amx, params[ 1 ], methodName);
+
 	char* format;
 	amx_StrParam(amx, params[ 4 ], format);
 
@@ -189,7 +192,7 @@ cell AMX_NATIVE_CALL __callDotnetMethod_STR(AMX* amx, cell* params){
 	VARIANT lResult ;
 
 	pluginPtr pICalc(__uuidof(pluginClass));
-	pICalc->callDotnetMethod(methodID, bstr_t(data.c_str()), &lResult);
+	pICalc->callDotnetMethod(bstr_t(methodName), bstr_t(data.c_str()), &lResult);
 
 	cell* addr = NULL;
 

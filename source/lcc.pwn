@@ -1,41 +1,70 @@
 /*
-	C# API
-	
-	C# plugin functions:
-	
-	    server.callRemoteCallback("callback name", object[] args) --> call callback on a server
-	    server.logwrite(text[]) == !printf!
-	    server.loadConfiguration(server.cfg) =)
-
-	Samp server functions:
-	    callDotnetMethod( methodID, format, params... )
+	.NET Plugin
+		by Seregamil
+		
+	C# <- CLR/OLE -> pawn
 	    
+	.NET
+	        cpp.logwrite( test[] ) -- выводит текст в консоль
+	        cpp.callRemoveCallback( callback[], params object[] args ) -- вызывает каллбэк на сервере с параметрами
+	        
+	PAWN
+	    	callDotnetMethod -- вызывает метод в плагине
+	    	    Возвращаемые значения:
+	    	        i - int32
+	    	        b - boolean = int(0/1)
+	    	        f - float
+						Запись возвращаемых значений без типизации.
+						    Пример:
+						        new temp = call... -- return int
+						        temp = call... -- return bool
+								temp = call... -- return float
+
+			callDotnetMethodStr -- так же вызывает метод в плагине.
+			    Отличие от предыдущей функции - возвращает всегда единицу и записывает результат в отдельную переменную
+			        Пример:
+			            new string[ 128 ] ;
+			            new call...( methodID, string, sizeof string, ...
+
+						Текст будет записан в переменную string
+						
 */
 #include <a_samp>
 
-native callDotnetMethod(methodID, split[], {Float,_}:...);
+native callDotnetMethod(methodName[], split[], {Float,_}:...);
+native callDotnetMethodStr(methodName[], str[], len, split[], {Float,_}:...);
 
-enum c_sharp {
+/*enum c_sharp {
 	onDotnetLoaded,
-	onPlayerConnect,
-	onPlayerDisconnect
-};
+	testINT,
+	testBOOL,
+	testSTRING,
+	testFLOAT
+};*/
 
 main(){
 
 }
 
 public OnGameModeInit() {
-    callDotnetMethod( onDotnetLoaded, "s", "hi");
+    callDotnetMethod("onDotnetLoaded", "cf", 'v', 1.0);
+
+    new temp_int = callDotnetMethod("testINT", "ii", 10, 24);
+    printf("testINT returned: %i", temp_int);
+    
+    new temp_bool = callDotnetMethod("testBOOL", "isi", 1, "boolean=)", 0);
+    printf("testBOOL returned: %i", temp_bool);
+    
+    new temp_float = callDotnetMethod("testFLOAT", "ifcf", 10, 1.432, 'c', 242);
+    printf("testFLOAT returned: %f", temp_float);
+    
+    new temp_str[ 16 ] ;
+	callDotnetMethodStr("testSTRING", temp_str, sizeof temp_str, "sss", "by", "Seregamil", "dotNET v1.0");
+    printf("testSTRING returned: %s", temp_str);
 	return true ;
 }
 
-public OnPlayerConnect( playerid ) {
-    callDotnetMethod( onPlayerConnect, "i", playerid );
-	return true ;
-}
-
-public OnPlayerDisconnect( playerid, reason ) {
-    callDotnetMethod( onPlayerDisconnect, "ii", playerid, reason );
-	return true ;
+forward onDotnetWasLoaded(str[]);
+public onDotnetWasLoaded(str[]){
+	print(str);
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Reflection;
 
 namespace c_sharp
 {
@@ -13,14 +14,18 @@ namespace c_sharp
         public delegate object dotnetMethod(params object[] args);
         public interface plugin
         {
-            object callDotnetMethod(int methodID, string arguments);
+            object callDotnetMethod(string methodName, string arguments);
         };
 
         public class pluginClass : plugin
-        { 
-            public object callDotnetMethod(int methodID, string arguments)
+        {
+            public object callDotnetMethod(string methodName, string arguments)
             {
-                return kernel.METHOD_ID[methodID](getArgsFromString(arguments, '\n'));
+                Type type1 = typeof(kernel);
+                object obj = Activator.CreateInstance(type1);
+                object[] mParam = getArgsFromString(arguments, '\n');
+                object result = (object)type1.InvokeMember(methodName, BindingFlags.InvokeMethod, null, obj, mParam);
+                return result;
             }
         }
 

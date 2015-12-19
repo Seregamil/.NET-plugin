@@ -13,14 +13,6 @@ namespace c_sharp
 {
     public class kernel
     {
-        public static cpp.dotnetMethod[] METHOD_ID = {
-                                        	onDotnetLoaded,
-	                                        testINT,
-	                                        testBOOL,
-	                                        testSTRING,
-	                                        testFLOAT
-                                     };
-
         public static object onDotnetLoaded(params object[] args)
         {
             cpp.logwrite("dotnet-> onDotnetLoaded was called. ARGS:");
