@@ -1,0 +1,17 @@
+#file's
+
+*.dll
+*.zip
+*.rar
+*.log
+*.txt
+*.tlog
+*.pdb
+
+
+#dir's
+
+CMakeFiles/*
+bin/*
+obj/*
+Debug/*

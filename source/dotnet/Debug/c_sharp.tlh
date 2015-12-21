@@ -3,7 +3,7 @@
 // c:\users\seregamil\documents\github\.net-plugin\source\dotnet\debug\c_sharp.tlh
 //
 // C++ source equivalent of Win32 type library C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\bin\Debug\c_sharp.tlb
-// compiler-generated file created 12/19/15 at 15:12:29 - DO NOT EDIT!
+// compiler-generated file created 12/21/15 at 18:52:35 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)
@@ -20,7 +20,6 @@ struct __declspec(uuid("3282f24e-f065-4738-b11e-1e713c044a30"))
 /* LIBID */ __c_sharp;
 struct /* coclass */ kernel;
 struct /* coclass */ cpp;
-struct /* coclass */ dotnetMethod;
 struct __declspec(uuid("4ae22b78-b13b-3de3-a082-3cd520fde1f8"))
 /* dual interface */ plugin;
 struct /* coclass */ pluginClass;
@@ -28,8 +27,6 @@ struct __declspec(uuid("a6c01c21-de05-306c-a30e-c01789fa230b"))
 /* dual interface */ _kernel;
 struct __declspec(uuid("8b614bc2-603e-3015-a6b6-ea866447cc18"))
 /* dual interface */ _cpp;
-struct __declspec(uuid("fdf79d16-248c-314a-8a9d-fd92091fe381"))
-/* dual interface */ _dotnetMethod;
 struct __declspec(uuid("68a8211a-795b-38bd-bb15-fae7e1877786"))
 /* dual interface */ _pluginClass;
 
@@ -40,7 +37,6 @@ struct __declspec(uuid("68a8211a-795b-38bd-bb15-fae7e1877786"))
 _COM_SMARTPTR_TYPEDEF(plugin, __uuidof(plugin));
 _COM_SMARTPTR_TYPEDEF(_kernel, __uuidof(_kernel));
 _COM_SMARTPTR_TYPEDEF(_cpp, __uuidof(_cpp));
-_COM_SMARTPTR_TYPEDEF(_dotnetMethod, __uuidof(_dotnetMethod));
 _COM_SMARTPTR_TYPEDEF(_pluginClass, __uuidof(_pluginClass));
 
 //
@@ -56,14 +52,6 @@ struct __declspec(uuid("3d20e733-7198-3b54-81c9-201264da0126"))
 cpp;
     // [ default ] interface _cpp
     // interface _Object
-
-struct __declspec(uuid("28e12591-1efb-3462-a330-27d5262282d5"))
-dotnetMethod;
-    // [ default ] interface _dotnetMethod
-    // interface _Delegate
-    // interface _Object
-    // interface ICloneable
-    // interface ISerializable
 
 struct __declspec(uuid("4ae22b78-b13b-3de3-a082-3cd520fde1f8"))
 plugin : IDispatch
@@ -90,10 +78,6 @@ _kernel : IDispatch
 
 struct __declspec(uuid("8b614bc2-603e-3015-a6b6-ea866447cc18"))
 _cpp : IDispatch
-{};
-
-struct __declspec(uuid("fdf79d16-248c-314a-8a9d-fd92091fe381"))
-_dotnetMethod : IDispatch
 {};
 
 struct __declspec(uuid("68a8211a-795b-38bd-bb15-fae7e1877786"))

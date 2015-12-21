@@ -9,3 +9,4 @@ C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\bin\Debug\c_sharp
 C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\bin\Debug\c_sharp.tlb
 C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\obj\Debug\c_sharp.dll
 C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\obj\Debug\c_sharp.pdb
+C:\Users\Seregamil\Documents\GitHub\.NET-plugin\source\c_sharp\obj\Debug\c_sharp.csprojResolveAssemblyReference.cache

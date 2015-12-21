@@ -8,7 +8,6 @@ namespace c_sharp
 {
     public class cpp
     {
-        public delegate object dotnetMethod(params object[] args);
         public interface plugin
         {
             object callDotnetMethod(string methodName, string arguments);
@@ -19,10 +18,17 @@ namespace c_sharp
             public object callDotnetMethod(string methodName, string arguments)
             {
                 Type type1 = typeof(kernel);
+
+                if (methodName.IndexOf(".") != -1)
+                {
+                    string[] temp = methodName.Split('.');
+                    type1 = Type.GetType("c_sharp." + temp[0]);
+                    methodName = temp[1];
+                }
+
+                object[] args = getArgsFromString(arguments, '\n'); // get all arguments
                 object obj = Activator.CreateInstance(type1);
-                object[] mParam = getArgsFromString(arguments, '\n');
-                object result = (object)type1.InvokeMember(methodName, BindingFlags.InvokeMethod, null, obj, mParam);
-                return result;
+                return (object)type1.InvokeMember(methodName, BindingFlags.InvokeMethod, null, obj, args);
             }
         }
 

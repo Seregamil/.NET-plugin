@@ -50,4 +50,38 @@ namespace c_sharp
             return result;
         }
     }
+
+   /* public class Tester
+    {
+        public string _testField;
+
+        public Tester()
+        {
+        }
+
+        public Tester(string arg)
+        {
+            _testField = arg;
+        }
+
+        public void TestMethod()
+        {
+            cpp.logwrite("Called TestMethod");
+        }
+
+        public void TestMethodWithArg(string arg)
+        {
+            cpp.logwrite("Called TestMethodWithArg: " + arg);
+        }
+
+        public void TestMethodUsingValueFromConstructorAndArgs(string arg, bool arg2)
+        {
+            cpp.logwrite("Called TestMethodUsingValueFromConstructorAndArg " + arg + " " + arg2 + " " + _testField);
+        }
+
+        public string GetContstructorValue()
+        {
+            return _testField;
+        }
+    }*/
 }
