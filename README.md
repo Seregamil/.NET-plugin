@@ -1,1 +1,1 @@
-# Writing plugins for SA-MP in C#
+# Writing plugins for SA-MP in .NET
