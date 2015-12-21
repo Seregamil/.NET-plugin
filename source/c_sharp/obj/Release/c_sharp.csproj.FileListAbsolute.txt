@@ -1,8 +1,0 @@
-C:\Users\Seregamil\Desktop\SHA512\c_sharp\bin\Release\c_sharp.dll
-C:\Users\Seregamil\Desktop\SHA512\c_sharp\bin\Release\c_sharp.pdb
-C:\Users\Seregamil\Desktop\SHA512\c_sharp\bin\Release\c_sharp.tlb
-C:\Users\Seregamil\Desktop\SHA512\c_sharp\obj\Release\c_sharp.dll
-C:\Users\Seregamil\Desktop\SHA512\c_sharp\obj\Release\c_sharp.pdb
-S:\gta-o\plugins\c_sharp.dll
-S:\gta-o\plugins\c_sharp.pdb
-S:\gta-o\plugins\c_sharp.tlb
