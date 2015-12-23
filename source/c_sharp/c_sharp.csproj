@@ -46,6 +46,7 @@
     <Compile Include="kernel.cs" />
     <Compile Include="cpp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regex.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="c_sharp.tlb" />
