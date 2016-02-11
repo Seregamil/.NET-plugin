@@ -15,19 +15,19 @@ native callDotnetMethodStr(methodName[], str[], len, split[], {Float,_}:...);
 
 main(){
 	print( "\nUsing Regular expressions!\n" );
-    new str[ 123 ];
-    format( str,sizeof str, "localhost: 127.0.0.1 (c) lol: 192.168.1.2" );
-    printf( "Original line: %s", str );
+	new str[ 123 ];
+	format( str,sizeof str, "localhost: 127.0.0.1 (c) lol: 192.168.1.2" );
+	printf( "Original line: %s", str );
 
-    new regex_match_exist = regex_is_match( str, REGULAR_IP_ADDRESS );
-    if(regex_match_exist) {
+	new regex_match_exist = regex_is_match( str, REGULAR_IP_ADDRESS );
+	if(regex_match_exist) {
 		new regex_index = regex_match( str, REGULAR_IP_ADDRESS );
 		printf( "Index: %i", regex_index );
-        regex_replace( str, "***.***.***.***", REGULAR_IP_ADDRESS );
+		regex_replace( str, "***.***.***.***", REGULAR_IP_ADDRESS );
 		printf( "Result: %s", str );
-    } else {
-        print("Match not found");
-    }
+	} else {
+		print("Match not found");
+	}
 }
 
 
