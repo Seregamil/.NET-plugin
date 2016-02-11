@@ -73,13 +73,12 @@ cell* get_amxaddr(AMX *amx, cell amx_addr)
 
 cell AMX_NATIVE_CALL __callDotnetMethod(AMX* amx, cell* params){
 	char *methodName;
-	amx_StrParam(amx, params[ 1 ], methodName);
-
 	char* format;
+
+	amx_StrParam(amx, params[ 1 ], methodName);
 	amx_StrParam(amx, params[ 2 ], format);
 
 	int length = strlen(format);
-
 	string data;
 
 	for( int j = 0 ; j != length ; j ++ ) {
@@ -143,15 +142,13 @@ cell AMX_NATIVE_CALL __callDotnetMethod(AMX* amx, cell* params){
 }
 
 cell AMX_NATIVE_CALL __callDotnetMethod_STR(AMX* amx, cell* params){
-	//long methodID = params[ 1 ] ;
 	char *methodName;
-	amx_StrParam(amx, params[ 1 ], methodName);
-
 	char* format;
+
+	amx_StrParam(amx, params[ 1 ], methodName);
 	amx_StrParam(amx, params[ 4 ], format);
 
 	int length = strlen(format);
-
 	string data;
 
 	for( int j = 0 ; j != length ; j ++ ) {

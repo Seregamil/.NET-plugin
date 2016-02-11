@@ -25,9 +25,8 @@ namespace c_sharp
                     type1 = Type.GetType("c_sharp." + temp[0]);
                     methodName = temp[1];
                 }
-
-                object[] args = getArgsFromString(arguments, '\n'); // get all arguments
                 object obj = Activator.CreateInstance(type1);
+                object[] args = getArgsFromString(arguments, '\n'); // get all arguments
                 return (object)type1.InvokeMember(methodName, BindingFlags.InvokeMethod, null, obj, args);
             }
         }
